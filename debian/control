@@ -1,0 +1,11 @@
+Source: onk
+Section: utils
+Priority: optional
+Maintainer: Jakub Wilk <ubanus@cavendish.pronus.net>
+Build-Depends: debhelper (>= 4.0.0)
+Standards-Version: 3.6.0
+
+Package: onk
+Architecture: any
+Depends: ${shlibs:Depends}
+Description: General event handler
