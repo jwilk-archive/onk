@@ -1,83 +1,96 @@
-/* 7 Jan 2004 */
+/* 7 Jan 2005; 1 May 2005 */
 
+#define _GNU_SOURCE
+#include <limits.h>
+#include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
 #include <linux/input.h>
 
-#define max_trigger_no 0x7ff
+#include "keylist.h"
 
 static inline char freadch(FILE *file)
 {
-  char buf='\0';
+  char buf = '\0';
   fread((void*)&buf, sizeof(char), 1, file);
   return buf;
 }
 
-int main()
+int compare_keylist_item(const void *a, const void *b)
 {
-  char* triggers[max_trigger_no+1];
-  char fname[] = "/dev/input/event$";
-  char ch;
+  return strcmp(((keylist_item_t*)a)->name, ((keylist_item_t*)b)->name);
+}
+
+int main(void)
+{
+  char *tmp, *str, *triggers[KEY_MAX + 1];
+  char *fname = NULL;
+  size_t junk;
 
   memset(triggers, 0, sizeof(triggers));
-  
-#define fetch do { ch = freadch(stdin); } while(0)
-#define fail do { return EXIT_FAILURE; } while(0)
-#define digit (ch >= '0' && ch<='9')
-#define white (ch <= ' ' && ch != '\0')  
-#define nwhite (ch > ' ')  
-#define neof (ch != '\0')  
-
-  fetch;
-  if (ch != '$') fail;
-  fetch;
-  if (digit) strchr(fname, '$')[0] = ch; else fail;
-  fetch;
-  if (!white) fail;
-  do fetch; while (white);
-  while (neof)
+  if (getline(&fname, &junk, stdin) == -1)
   {
-    int i, y = 0, x = 0;
-    while (digit) { x *= 10; x += (ch-'0'); fetch; }
-    if (ch == '.')
+    perror(NULL);
+    return EXIT_FAILURE;
+  }
+  tmp = strchr(fname, '\n');
+  if (tmp != NULL)
+    *tmp = '\0';
+  while (true)
+  {
+    int key;
+    int key2 = -1;
+    str = NULL;
+    if (getdelim(&str, &junk, '\t', stdin) == -1)
+      break;
+    if (sscanf(str, "%d..%d", &key, &key2) < 1)
     {
-      while (ch == '.') fetch;
-      while (digit) { y *= 10; y += (ch-'0'); fetch; }
+      tmp = strchr(str, '\t');
+      if (tmp != NULL)
+        *tmp = '\0';
+      keylist_item_t goal = { .name = str };
+      keylist_item_t *result =
+        bsearch(&goal, keylist, sizeof(keylist)/sizeof(keylist_item_t), sizeof(keylist_item_t), compare_keylist_item); 
+      if (result == NULL)
+        return EXIT_FAILURE;
+      key = result->value;
+    } 
+    if (key < 0 || key > KEY_MAX || key2 > KEY_MAX)
+      return EXIT_FAILURE;
+    str = NULL;
+    if (getline(&str, &junk, stdin) == -1)
+    {
+      perror(NULL);
+      return EXIT_FAILURE;
     }
-    else
-      y=x;
-    while (white) fetch;
-
-    char buffer[0x1000], *bufferd;
-    i=0;
-    while (i<sizeof(buffer)-1 && ch!='\n') { buffer[i]=ch; fetch; i++; }
-    while (nwhite) fetch;
-    buffer[i]='\0';
-    bufferd = strdup(buffer);
-    for (; x<=y && x<=max_trigger_no; x++)
-      triggers[x] = bufferd;
-    while (white) fetch; 
+    do
+      triggers[key++] = str;
+    while (key2 > 0 && key <= key2);
   }
 
-  FILE* file = fopen(fname, "r");
-  if (!file)
-    return EXIT_FAILURE;
- 
-  daemon(0, 0);
-  nice(99);
-  
   struct input_event ev;
+  FILE* file = fopen(fname, "r");
+  if (file == NULL) 
+  { 
+    perror(fname); 
+    return EXIT_FAILURE; 
+  }
+
+  if (daemon(0, 0) == -1 || nice(NZERO/2) == -1) 
+  { 
+    perror(NULL); 
+    return EXIT_FAILURE; 
+  }
   while (fread(&ev, sizeof(ev), 1, file) > 0)
   {
-    if (ev.value)
-    {
-      if (ev.code <= max_trigger_no)
-      if (triggers[ev.code])
-        system(triggers[ev.code]);
-    }
+    if (!ev.value || ev.type != EV_KEY || ev.code > KEY_MAX)
+      continue;
+    if (triggers[ev.code])
+      system(triggers[ev.code]) == -1;
   }
+  fclose(file);
   return EXIT_SUCCESS;
 }
 

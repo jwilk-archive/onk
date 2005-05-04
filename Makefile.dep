@@ -1,0 +1,3 @@
+keyemit.o: keyemit.c keylist.h
+keysniff.o: keysniff.c keytable.h
+onk.o: onk.c keylist.h

@@ -24,8 +24,7 @@ install: build
 	dh_testroot
 	dh_clean -k 
 	dh_installdirs
-	cp keysniff $(CURDIR)/debian/onk/usr/sbin
-	cp onk $(CURDIR)/debian/onk/usr/sbin
+	cp keysniff keyemit onk $(CURDIR)/debian/onk/usr/sbin
 	touch $(CURDIR)/debian/onk/etc/onk.conf
 
 binary-indep: build install
@@ -34,7 +33,6 @@ binary-arch: build install
 	dh_testdir
 	dh_testroot
 	dh_installchangelogs 
-	dh_installdocs
 	dh_link
 	dh_strip
 	dh_compress

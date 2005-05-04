@@ -1,17 +1,31 @@
-all: keysniff onk
+CC = gcc
+CFLAGS = -std=gnu99 -pedantic -Wall -Os
+CFILES = $(wildcard *.c)
+OFILES = $(CFILES:.c=.o)
+EXEFILES = keyemit keysniff onk
+
+all: $(EXEFILES)
 
 test: all
 	./onk < onk.conf
 
 clean:
-	rm -f keysniff onk a.out
+	rm -f $(EXEFILES) *.o *.h
 
-keysniff: keysniff.c
-	gcc -Wall -s -Os ${<} -o ${@}
+keylist.h: /usr/include/linux/input.h
+	./script/keylist.h.sh < ${<} > ${@}
 
-onk: onk.c
-	gcc -Wall -s -Os ${<} -o ${@}
+keytable.h: /usr/include/linux/input.h
+	./script/keytable.h.sh < ${<} > ${@}
+
+$(EXEFILES): %: %.o
+	$(CC) $(CFLAGS) -s ${<} -o ${@}
+
+$(OFILES): %.o: %.c
+	$(CC) $(CFLAGS) -c ${<} -o ${@}
 
 .PHONY: all test clean
+
+include Makefile.dep
 
 # vim: ts=4
