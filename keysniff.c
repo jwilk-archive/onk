@@ -1,12 +1,9 @@
-/* 2, 7 Jan 2005; 1 May 2005 */
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <linux/input.h>
 #include "keytable.h"
 
-
-int main(int argc, char** argv)
+int main(int argc, char **argv)
 {
   char *fname = "/dev/input/event0";
   if (argc > 1)

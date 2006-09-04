@@ -1,11 +1,12 @@
 Source: onk
 Section: utils
 Priority: optional
-Maintainer: Jakub Wilk <ubanus@cavendish.pronus.net>
-Build-Depends: debhelper (>= 4.0.0)
-Standards-Version: 3.6.0
+Maintainer: Jakub Wilk <ubanus@users.sf.net>
+Build-Depends: debhelper (>= 5.0), linux-kernel-headers (>= 2.6)
+Standards-Version: 3.7.2
+Bugs: mailto:ubanus@users.sf.net
 
 Package: onk
 Architecture: any
-Depends: ${shlibs:Depends}
+Depends: ${misc:Depends}, ${shlibs:Depends}
 Description: General event handler

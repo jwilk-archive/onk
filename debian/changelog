@@ -1,3 +1,11 @@
+onk (1:0.3) unstable; urgency=low
+
+  * Support for non-daemon mode (which is now default).
+  * Support for grab mode.
+  * More sensible configuration parsing.
+
+ -- Jakub Wilk <ubanus@users.sf.net>  Mon,  4 Sep 2006 13:27:54 +0200
+
 onk (0.20050104) unstable; urgency=low
 
   * New release.

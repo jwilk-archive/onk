@@ -1,13 +1,10 @@
 #!/usr/bin/make -f
 
-configure: configure-stamp
-configure-stamp:
-	dh_testdir
-	touch configure-stamp
+configure: ;
 
 build: build-stamp
 
-build-stamp: configure-stamp 
+build-stamp:
 	dh_testdir
 	$(MAKE)
 	touch build-stamp
@@ -15,7 +12,7 @@ build-stamp: configure-stamp
 clean:
 	dh_testdir
 	dh_testroot
-	rm -f build-stamp configure-stamp
+	$(RM) build-stamp
 	-$(MAKE) clean
 	dh_clean 
 
@@ -23,16 +20,16 @@ install: build
 	dh_testdir
 	dh_testroot
 	dh_clean -k 
-	dh_installdirs
-	cp keysniff keyemit onk $(CURDIR)/debian/onk/usr/sbin
-	touch $(CURDIR)/debian/onk/etc/onk.conf
+	dh_install keysniff keyemit onk usr/sbin
+	dh_install $(wildcard conf/*) etc/onk/
 
 binary-indep: build install
 
 binary-arch: build install
 	dh_testdir
 	dh_testroot
-	dh_installchangelogs 
+	dh_installchangelogs
+	dh_installdocs
 	dh_link
 	dh_strip
 	dh_compress

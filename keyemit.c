@@ -1,5 +1,3 @@
-/* 1, 4 May 2005 */
-
 #define _GNU_SOURCE
 #include <stdio.h>
 #include <stdlib.h>
@@ -41,18 +39,19 @@ int main(int argc, char **argv)
   }
  
   char *str = NULL;
-  size_t strlen, buflen = 0;
+  ssize_t strlen;
+  size_t buflen = 0;
   
   while ((strlen = getline(&str, &buflen, stdin)) != -1)
   {
     int key;
-    if (strlen > 0 && str[strlen-1] == '\n')
-      str[strlen-1] = '\0';
+    if (strlen > 0 && str[strlen - 1] == '\n')
+      str[strlen - 1] = '\0';
     if (sscanf(str, "%d", &key) != 1)
     {
       keylist_item_t goal = { .name = str };
       keylist_item_t *result =
-        bsearch(&goal, keylist, sizeof(keylist)/sizeof(keylist_item_t), sizeof(keylist_item_t), compare_keylist_item); 
+        bsearch(&goal, keylist, sizeof keylist / sizeof (keylist_item_t), sizeof (keylist_item_t), compare_keylist_item); 
       if (result == NULL)
         continue;
       key = result->value;
