@@ -1,3 +1,11 @@
+/**
+ * Copyright (c) 2005, 2006, 2007 Jakub Wilk <ubanus@users.sf.net>.
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License Version 2, as
+ * published by the Free Software Foundation.
+ */
+
 #define _GNU_SOURCE
 #include <limits.h>
 #include <stdbool.h>
