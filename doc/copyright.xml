@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dummy-root>
+	<author>
+		<firstname>Jakub</firstname> <surname>Wilk</surname>
+		<affiliation>
+			<address>
+				<email>ubanus@users.sf.net</email>
+			</address>
+		</affiliation>
+	</author>
+	<copyright>
+		<year>2005</year>
+		<year>2006</year>
+		<year>2007</year>
+		<holder>Jakub Wilk</holder>
+	</copyright>
+</dummy-root>
+
+<!-- vim:set ts=4 sw=4: -->
