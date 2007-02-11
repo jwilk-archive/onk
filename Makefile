@@ -1,4 +1,7 @@
 DOCBOOK_XSL = /usr/share/xml/docbook/stylesheet/nwalsh/manpages/docbook.xsl
+ifeq ($(shell [ -r "$(DOCBOOK_XSL)" ] || echo n),n)
+  DOCBOOK_XSL = http://docbook.sourceforge.net/release/xsl/current/manpages/docbook.xsl
+endif  
 VERSION=$(shell sed -n -e '/onk ([0-9]*[^0-9]*\([0-9.-]*\)).*/ { s//\1/; p; q; } ' < debian/changelog)
 CC = gcc
 CFLAGS = -std=gnu99 -pedantic -Wall -W -Os
