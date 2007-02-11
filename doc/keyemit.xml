@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE refentry PUBLIC '-//OASIS//DTD DocBook XML V4.5//EN' 'http://www.docbook.org/xml/4.5/docbookx.dtd' 
+[
+	<!ENTITY p 'keyemit'>
+	<!ENTITY version '-'>
+]>
+
+<refentry>
+
+<refentryinfo>
+	<title>&p; manual</title>
+	<productname>&p;</productname>
+	<xi:include xmlns:xi='http://www.w3.org/2001/XInclude' href='copyright.xml' xpointer='xpointer(/*/*)'/>
+	<date>2007-02-11</date>
+</refentryinfo>
+
+<refmeta>
+	<refentrytitle>&p;</refentrytitle>
+	<manvolnum>1</manvolnum>
+	<refmiscinfo class='version'>&version;</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+	<refname>&p;</refname>
+	<refpurpose>emulate key presses</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv>
+	<cmdsynopsis>
+		<command>&p;</command>
+		<arg choice='opt'><option><filename><replaceable>event-device</replaceable></filename></option></arg>
+	</cmdsynopsis>
+</refsynopsisdiv>
+<refsect1>
+	<title>Description</title>
+	<para>
+		<command>&p;</command> reads key codes from standard input and generates keyboard evenents,
+		thus simulating key presses.
+	</para>
+</refsect1>
+
+<refsect1>
+	<title>Options</title>
+	<para>
+		<command>&p;</command> accepts the following options:
+	</para>
+	<variablelist>
+		<varlistentry>
+			<term><option><filename><replaceable>event-device</replaceable></filename></option></term>
+			<listitem>
+				<para>A device to send events to. Default is <filename>/dev/input/event0</filename>.</para>
+			</listitem>
+		</varlistentry>
+	</variablelist>
+</refsect1>
+
+<refsect1>
+	<title>Usage example</title>
+	<screen><prompt>#</prompt> <command>printf</command> 'KEY_F\xaKEY_O\xaKEY_O\xaKEY_DOT' | <command>keyemit</command></screen>
+</refsect1>
+
+<refsect1>
+	<title>See also</title>
+	<para>
+		<citerefentry>
+			<refentrytitle>keysniff</refentrytitle>
+			<manvolnum>1</manvolnum>
+		</citerefentry>
+		<citerefentry>
+			<refentrytitle>onk</refentrytitle>
+			<manvolnum>1</manvolnum>
+		</citerefentry>
+	</para>
+</refsect1>
+
+</refentry>
+
+<!-- vim:set ts=4 sw=4: -->
