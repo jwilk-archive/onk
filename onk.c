@@ -100,7 +100,7 @@ int main(void)
   }
   
   struct input_event ev;
-  FILE* file = fopen(fname, "r");
+  FILE *file = fopen(fname, "r");
   if (file == NULL) 
   { 
     perror(fname); 
@@ -108,7 +108,7 @@ int main(void)
   }
   if (conf_grab && ioctl(fileno(file), EVIOCGRAB, 1) == -1)
     fail();
-  if (conf_daemon && (daemon(0, 0) == -1 || nice(NZERO/2) == -1))
+  if (conf_daemon && (daemon(0, 0) == -1 || nice(NZERO / 2) == -1))
     fail();
   while (fread(&ev, sizeof ev, 1, file) > 0)
   {
