@@ -1,6 +1,6 @@
 Source: onk
 Section: utils
-Priority: optional
+Priority: extra
 Maintainer: Jakub Wilk <ubanus@users.sf.net>
 Build-Depends: debhelper (>= 5.0), linux-kernel-headers (>= 2.6), xsltproc, docbook-xsl
 Standards-Version: 3.7.2
