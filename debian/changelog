@@ -1,3 +1,9 @@
+onk (1:0.3.1) unstable; urgency=low
+
+  * Provide manual pages.
+
+ -- Jakub Wilk <ubanus@users.sf.net>  Tue,  6 Mar 2007 19:00:28 +0100
+
 onk (1:0.3) unstable; urgency=low
 
   * Support for non-daemon mode (which is now default).
