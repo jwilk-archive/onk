@@ -1,0 +1,117 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE refentry PUBLIC '-//OASIS//DTD DocBook XML V4.5//EN' 'http://www.docbook.org/xml/4.5/docbookx.dtd' 
+[
+	<!ENTITY p 'onk'>
+	<!ENTITY version '-'>
+]>
+
+<refentry>
+
+<refentryinfo>
+	<title>&p; manual</title>
+	<productname>&p;</productname>
+	<xi:include xmlns:xi='http://www.w3.org/2001/XInclude' href='copyright.xml' xpointer='xpointer(/*/*)'/>
+	<date>2007-02-12</date>
+</refentryinfo>
+
+<refmeta>
+	<refentrytitle>&p;</refentrytitle>
+	<manvolnum>1</manvolnum>
+	<refmiscinfo class='version'>&version;</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+	<refname>&p;</refname>
+	<refpurpose>general keyboard event handler</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv>
+	<cmdsynopsis>
+		<command>&p;</command>
+	</cmdsynopsis>
+</refsynopsisdiv>
+
+<refsect1>
+	<title>Description</title>
+	<para>
+		<command>&p;</command> executes commands provided by the user in
+		response to keyboard events. Configuration is read from the standard
+		input.
+	</para>
+</refsect1>
+
+<refsect1>
+	<title>Configuration</title>
+	<para>
+		The configuration file is in the following format:
+		<screen><replaceable>event-device</replaceable>
+:<replaceable>option-1</replaceable> 
+:<replaceable>option-2</replaceable>
+<replaceable>…</replaceable>
+<replaceable>key-1</replaceable>&#9;<replaceable>action-1</replaceable>
+<replaceable>key-2</replaceable>&#9;<replaceable>action-2</replaceable>
+<replaceable>…</replaceable></screen>
+	</para>
+	<para>
+		<replaceable>event-device</replaceable> is a device to listen for events. 
+	</para>
+	<refsect2>
+		<title>Options</title>
+		<para>
+			You may use the following options:
+			<variablelist>
+				<varlistentry>
+					<term><option>daemon</option></term>
+					<listitem>
+						<para>Detach from the controlling terminal and run in the background as system deamon.</para>
+					</listitem>
+				</varlistentry>
+				<varlistentry>
+					<term><option>nodaemon</option></term>
+					<listitem>
+						<para>Run in the foreground. This is default.</para>
+					</listitem>
+				</varlistentry>
+				<varlistentry>
+					<term><option>grab</option></term>
+					<listitem>
+						<para>Use the exclusive access to the device.</para>
+					</listitem>
+				</varlistentry>
+				<varlistentry>
+					<term><option>nograb</option></term>
+					<listitem>
+						<para>Use the shared access to the device. This is default.</para>
+					</listitem>
+				</varlistentry>
+			</variablelist>
+		</para>
+	</refsect2>
+</refsect1>
+
+<refsect1>
+	<title>Usage example</title>
+	<screen><prompt>#</prompt> <command>printf</command> '/dev/input/event1\xa:nograb\xaKEY_A\techo "A has been pressed" > /dev/tty12' | <command>onk</command></screen>
+</refsect1>
+
+<refsect1>
+	<title>See also</title>
+	<para>
+		<citerefentry>
+			<refentrytitle>system</refentrytitle>
+			<manvolnum>3</manvolnum>
+		</citerefentry>
+		<citerefentry>
+			<refentrytitle>keysniff</refentrytitle>
+			<manvolnum>1</manvolnum>
+		</citerefentry>
+		<citerefentry>
+			<refentrytitle>keyemit</refentrytitle>
+			<manvolnum>1</manvolnum>
+		</citerefentry>
+	</para>
+</refsect1>
+
+</refentry>
+
+<!-- vim:set ts=4 sw=4: -->
