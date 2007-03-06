@@ -9,4 +9,5 @@ Bugs: mailto:ubanus@users.sf.net
 Package: onk
 Architecture: any
 Depends: ${misc:Depends}, ${shlibs:Depends}
+Suggests: input-utils
 Description: General event handler

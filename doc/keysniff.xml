@@ -54,8 +54,21 @@
 </refsect1>
 
 <refsect1>
+	<title>Bugs</title>
+	<para><command>input-events</command> might be a good replacement for <command>keysniff</command>.</para>
+</refsect1>
+
+<refsect1>
 	<title>See also</title>
 	<para>
+		<citerefentry>
+			<refentrytitle>input-events</refentrytitle>
+			<manvolnum>8</manvolnum>
+		</citerefentry>
+		<citerefentry>
+			<refentrytitle>lsinput</refentrytitle>
+			<manvolnum>8</manvolnum>
+		</citerefentry>
 		<citerefentry>
 			<refentrytitle>keyemit</refentrytitle>
 			<manvolnum>1</manvolnum>

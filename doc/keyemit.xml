@@ -63,6 +63,10 @@
 	<title>See also</title>
 	<para>
 		<citerefentry>
+			<refentrytitle>lsinput</refentrytitle>
+			<manvolnum>8</manvolnum>
+		</citerefentry>
+		<citerefentry>
 			<refentrytitle>keysniff</refentrytitle>
 			<manvolnum>1</manvolnum>
 		</citerefentry>
