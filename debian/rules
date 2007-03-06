@@ -6,7 +6,7 @@ build: build-stamp
 
 build-stamp:
 	dh_testdir
-	$(MAKE)
+	$(MAKE) all doc
 	touch build-stamp
 
 clean:
@@ -22,6 +22,7 @@ install: build
 	dh_clean -k 
 	dh_install keysniff keyemit onk usr/sbin
 	dh_install $(wildcard conf/*) etc/onk/
+	dh_installman $(wildcard doc/*.[0-9])
 
 binary-indep: build install
 
