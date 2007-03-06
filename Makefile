@@ -17,7 +17,7 @@ clean:
 	$(RM) $(EXEFILES) *.o *.h doc/*.[0-9]
 
 .PHONY: doc
-doc: doc/keysniff.1 doc/keyemit.1
+doc: doc/keysniff.1 doc/keyemit.1 doc/onk.1
 
 %.1: %.xml
 	sed -e "s/\(<!ENTITY version '\).*\('>\)/\1$(VERSION)\2/" < $(<) | xsltproc --path doc/ --xinclude --output $(@) $(DOCBOOK_XSL) -
