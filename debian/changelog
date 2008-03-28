@@ -1,3 +1,9 @@
+onk (1:0.3.2) UNRELEASED; urgency=low
+
+  * Shut up lintian.
+
+ -- Jakub Wilk <ubanus@users.sf.net>  Fri, 28 Mar 2008 18:35:04 +0100
+
 onk (1:0.3.1) unstable; urgency=low
 
   * Provide manual pages.
