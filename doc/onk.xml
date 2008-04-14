@@ -31,16 +31,16 @@
 	</cmdsynopsis>
 </refsynopsisdiv>
 
-<refsect1>
+<refsection>
 	<title>Description</title>
 	<para>
 		<command>&p;</command> executes commands provided by the user in
 		response to keyboard events. Configuration is read from the standard
 		input.
 	</para>
-</refsect1>
+</refsection>
 
-<refsect1>
+<refsection>
 	<title>Configuration</title>
 	<para>
 		The configuration file is in the following format:
@@ -87,14 +87,14 @@
 			</variablelist>
 		</para>
 	</refsect2>
-</refsect1>
+</refsection>
 
-<refsect1>
+<refsection>
 	<title>Usage example</title>
 	<screen><prompt>#</prompt> <command>printf</command> '/dev/input/event1\xa:nograb\xaKEY_A\techo "A has been pressed" > /dev/tty12' | <command>onk</command></screen>
-</refsect1>
+</refsection>
 
-<refsect1>
+<refsection>
 	<title>See also</title>
 	<para>
 		<citerefentry>
@@ -114,7 +114,7 @@
 			<manvolnum>1</manvolnum>
 		</citerefentry>
 	</para>
-</refsect1>
+</refsection>
 
 </refentry>
 

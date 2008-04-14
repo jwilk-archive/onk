@@ -31,15 +31,15 @@
 		<arg choice='opt'><option><filename><replaceable>event-device</replaceable></filename></option></arg>
 	</cmdsynopsis>
 </refsynopsisdiv>
-<refsect1>
+<refsection>
 	<title>Description</title>
 	<para>
 		<command>&p;</command> reads key codes from standard input and generates keyboard evenents,
 		thus simulating key presses.
 	</para>
-</refsect1>
+</refsection>
 
-<refsect1>
+<refsection>
 	<title>Options</title>
 	<para>
 		<command>&p;</command> accepts the following options:
@@ -52,14 +52,14 @@
 			</listitem>
 		</varlistentry>
 	</variablelist>
-</refsect1>
+</refsection>
 
-<refsect1>
+<refsection>
 	<title>Usage example</title>
 	<screen><prompt>#</prompt> <command>printf</command> 'KEY_F\xaKEY_O\xaKEY_O\xaKEY_DOT' | <command>keyemit</command></screen>
-</refsect1>
+</refsection>
 
-<refsect1>
+<refsection>
 	<title>See also</title>
 	<para>
 		<citerefentry>
@@ -75,7 +75,7 @@
 			<manvolnum>1</manvolnum>
 		</citerefentry>
 	</para>
-</refsect1>
+</refsection>
 
 </refentry>
 
