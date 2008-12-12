@@ -1,4 +1,16 @@
 #!/bin/sh
+
+# Copyright © 2005, 2006, 2007, 2008 Jakub Wilk <ubanus@users.sf.net>.
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; version 2 dated June, 1991.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+# General Public License for more details.
+
 export LC_ALL=POSIX
 cat <<EOF
 typedef struct { char *name; int value; } keylist_item_t;
