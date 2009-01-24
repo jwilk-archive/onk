@@ -12,7 +12,10 @@
 		<year>2005</year>
 		<year>2006</year>
 		<year>2007</year>
-		<holder>Jakub Wilk</holder>
+		<year>2008</year>
+		<holder>
+			<firstname>Jakub</firstname> <surname>Wilk</surname>
+		</holder>
 	</copyright>
 </dummy-root>
 
