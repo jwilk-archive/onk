@@ -1,6 +1,6 @@
 onk (1:0.3.2) UNRELEASED; urgency=low
 
-  * Shut up lintian.
+  * 
 
  -- Jakub Wilk <jwilk@jwilk.net>  Fri, 28 Mar 2008 18:35:04 +0100
 
@@ -20,15 +20,10 @@ onk (1:0.3) unstable; urgency=low
 
 onk (0.20050104) unstable; urgency=low
 
-  * New release.
+  * New tool: keyemit.
+  * Major code rewrite.
 
  -- Jakub Wilk <jwilk@jwilk.net>  Wed, 04 May 2005 19:52:08 +0200
-
-onk (0.20050101) unstable; urgency=low
-
-  * New release.
-
- -- Jakub Wilk <jwilk@jwilk.net>  Sun, 01 May 2005 14:57:33 +0200
 
 onk (0.20040107) unstable; urgency=low
 
