@@ -1,10 +1,10 @@
 Source: onk
 Section: utils
 Priority: extra
-Maintainer: Jakub Wilk <ubanus@users.sf.net>
+Maintainer: Jakub Wilk <jwilk@jwilk.net>
 Build-Depends: debhelper (>= 5.0), linux-kernel-headers (>= 2.6), xsltproc, docbook-xsl
 Standards-Version: 3.8.0
-Bugs: mailto:ubanus@users.sf.net
+Bugs: mailto:jwilk@jwilk.net
 
 Package: onk
 Architecture: any

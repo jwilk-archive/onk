@@ -2,13 +2,13 @@ onk (1:0.3.2) UNRELEASED; urgency=low
 
   * Shut up lintian.
 
- -- Jakub Wilk <ubanus@users.sf.net>  Fri, 28 Mar 2008 18:35:04 +0100
+ -- Jakub Wilk <jwilk@jwilk.net>  Fri, 28 Mar 2008 18:35:04 +0100
 
 onk (1:0.3.1) unstable; urgency=low
 
   * Provide manual pages.
 
- -- Jakub Wilk <ubanus@users.sf.net>  Tue,  6 Mar 2007 19:00:28 +0100
+ -- Jakub Wilk <jwilk@jwilk.net>  Tue,  6 Mar 2007 19:00:28 +0100
 
 onk (1:0.3) unstable; urgency=low
 
@@ -16,23 +16,23 @@ onk (1:0.3) unstable; urgency=low
   * Support for grab mode.
   * More sensible configuration parsing.
 
- -- Jakub Wilk <ubanus@users.sf.net>  Mon,  4 Sep 2006 13:27:54 +0200
+ -- Jakub Wilk <jwilk@jwilk.net>  Mon,  4 Sep 2006 13:27:54 +0200
 
 onk (0.20050104) unstable; urgency=low
 
   * New release.
 
- -- Jakub Wilk <ubanus@users.sf.net>  Wed, 04 May 2005 19:52:08 +0200
+ -- Jakub Wilk <jwilk@jwilk.net>  Wed, 04 May 2005 19:52:08 +0200
 
 onk (0.20050101) unstable; urgency=low
 
   * New release.
 
- -- Jakub Wilk <ubanus@users.sf.net>  Sun, 01 May 2005 14:57:33 +0200
+ -- Jakub Wilk <jwilk@jwilk.net>  Sun, 01 May 2005 14:57:33 +0200
 
 onk (0.20040107) unstable; urgency=low
 
   * Initial release.
 
- -- Jakub Wilk <ubanus@users.sf.net>  Fri,  7 Jan 2005 17:09:52 +0100
+ -- Jakub Wilk <jwilk@jwilk.net>  Fri,  7 Jan 2005 17:09:52 +0100
 
