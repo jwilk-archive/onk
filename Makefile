@@ -6,6 +6,8 @@ CFILES = $(wildcard *.c)
 OFILES = $(CFILES:.c=.o)
 EXEFILES = keyemit keysniff onk
 
+xsltproc_opts = --param man.authors.section.enabled 0
+
 .PHONY: all
 all: $(EXEFILES)
 
@@ -17,7 +19,8 @@ clean:
 doc: doc/keysniff.8 doc/keyemit.8 doc/onk.8
 
 %.8: %.xml
-	sed -e "s/\(<!ENTITY version '\).*\('>\)/\1$(VERSION)\2/" < $(<) | xsltproc --path doc/ --xinclude --output $(@) $(DOCBOOK_XSL) -
+	sed -e "s/\(<!ENTITY version '\).*\('>\)/\1$(VERSION)\2/" < $(<) \
+	| xsltproc $(xsltproc_opts) --path doc/ --xinclude --output $(@) $(DOCBOOK_XSL) -
 
 keylist.h: /usr/include/linux/input.h
 	./script/keylist.h.sh < ${<} > ${@}
