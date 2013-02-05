@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dummy-root>
+	<author>
+		<firstname>Jakub</firstname> <surname>Wilk</surname>
+		<email>jwilk@jwilk.net</email>
+	</author>
+</dummy-root>
+
+<!-- vim:set ts=4 sw=4: -->
