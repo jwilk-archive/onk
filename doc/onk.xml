@@ -99,15 +99,15 @@
 		<citerefentry>
 			<refentrytitle>lsinput</refentrytitle>
 			<manvolnum>8</manvolnum>
-		</citerefentry>
+		</citerefentry>,
 		<citerefentry>
 			<refentrytitle>system</refentrytitle>
 			<manvolnum>3</manvolnum>
-		</citerefentry>
+		</citerefentry>,
 		<citerefentry>
 			<refentrytitle>keysniff</refentrytitle>
 			<manvolnum>8</manvolnum>
-		</citerefentry>
+		</citerefentry>,
 		<citerefentry>
 			<refentrytitle>keyemit</refentrytitle>
 			<manvolnum>8</manvolnum>

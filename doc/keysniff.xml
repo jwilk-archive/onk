@@ -63,15 +63,15 @@
 		<citerefentry>
 			<refentrytitle>input-events</refentrytitle>
 			<manvolnum>8</manvolnum>
-		</citerefentry>
+		</citerefentry>,
 		<citerefentry>
 			<refentrytitle>lsinput</refentrytitle>
 			<manvolnum>8</manvolnum>
-		</citerefentry>
+		</citerefentry>,
 		<citerefentry>
 			<refentrytitle>keyemit</refentrytitle>
 			<manvolnum>8</manvolnum>
-		</citerefentry>
+		</citerefentry>,
 		<citerefentry>
 			<refentrytitle>onk</refentrytitle>
 			<manvolnum>8</manvolnum>
