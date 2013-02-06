@@ -1,0 +1,9 @@
+syntax: glob
+
+*.o
+doc/*.8
+keyemit
+keylist.h
+keysniff
+keytable.h
+onk
