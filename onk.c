@@ -1,5 +1,5 @@
 /**
- * Copyright © 2005, 2006, 2007, 2008 Jakub Wilk <jwilk@jwilk.net>.
+ * Copyright © 2005, 2006, 2007, 2008, 2013 Jakub Wilk <jwilk@jwilk.net>.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -12,6 +12,7 @@
  */
 
 #define _GNU_SOURCE
+#include <assert.h>
 #include <limits.h>
 #include <stdbool.h>
 #include <stdio.h>
@@ -83,6 +84,7 @@ int main(void)
     tmp = strchr(line, '\t');
     if (tmp == NULL)
       invalid_config(n);
+    assert(tmp != NULL);
     *tmp = '\0';
     command = tmp + 1;
     keyname = line;
@@ -95,6 +97,7 @@ int main(void)
         bsearch(&goal, keylist, sizeof keylist / sizeof (keylist_item_t), sizeof (keylist_item_t), compare_keylist_item); 
       if (result == NULL)
         invalid_config(n);
+      assert(result != NULL);
       key = result->value;
     } 
     if (key < 0 || key > KEY_MAX || key2 > KEY_MAX)
