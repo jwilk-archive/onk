@@ -21,5 +21,5 @@ sed -n -r -e '/^#define (KEY|BTN)_/ s/#define ([A-Z0-9_]+)[ \t]*((0x)?[0-9a-f]+)
 cat <<EOF
 };
 
-/* vim:set ts=2 sw=2 et: */
+/* vim:set ts=2 sts=2 sw=2 et: */
 EOF

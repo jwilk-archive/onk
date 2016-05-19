@@ -130,4 +130,4 @@ int main(void)
   return EXIT_SUCCESS;
 }
 
-/* vim:set ts=2 sw=2 et: */
+/* vim:set ts=2 sts=2 sw=2 et: */
