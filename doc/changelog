@@ -3,8 +3,9 @@ onk (0.3.2) UNRELEASED; urgency=low
   * Improve the manual pages, as per man-pages(7) recommendations:
     - Fix typos.
     - Remove the “AUTHOR” and “COPYRIGHT” sections.
+    - Make the examples more portable.
 
- -- Jakub Wilk <jwilk@jwilk.net>  Thu, 19 May 2016 16:19:32 +0200
+ -- Jakub Wilk <jwilk@jwilk.net>  Thu, 19 May 2016 16:30:35 +0200
 
 onk (0.3.1) unstable; urgency=low
 
