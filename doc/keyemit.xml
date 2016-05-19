@@ -1,81 +1,81 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!DOCTYPE refentry PUBLIC '-//OASIS//DTD DocBook XML V4.5//EN' 'http://www.docbook.org/xml/4.5/docbookx.dtd' 
 [
-	<!ENTITY p 'keyemit'>
-	<!ENTITY version '-'>
+    <!ENTITY p 'keyemit'>
+    <!ENTITY version '-'>
 ]>
 
 <refentry>
 
 <refentryinfo>
-	<title>&p; manual</title>
-	<productname>&p;</productname>
-	<xi:include xmlns:xi='http://www.w3.org/2001/XInclude' href='author.xml' xpointer='xpointer(/*/*)'/>
+    <title>&p; manual</title>
+    <productname>&p;</productname>
+    <xi:include xmlns:xi='http://www.w3.org/2001/XInclude' href='author.xml' xpointer='xpointer(/*/*)'/>
 </refentryinfo>
 
 <refmeta>
-	<refentrytitle>&p;</refentrytitle>
-	<manvolnum>8</manvolnum>
-	<refmiscinfo class='version'>&version;</refmiscinfo>
+    <refentrytitle>&p;</refentrytitle>
+    <manvolnum>8</manvolnum>
+    <refmiscinfo class='version'>&version;</refmiscinfo>
 </refmeta>
 
 <refnamediv>
-	<refname>&p;</refname>
-	<refpurpose>emulate key presses</refpurpose>
+    <refname>&p;</refname>
+    <refpurpose>emulate key presses</refpurpose>
 </refnamediv>
 
 <refsynopsisdiv>
-	<cmdsynopsis>
-		<command>&p;</command>
-		<arg choice='opt'><option><filename><replaceable>event-device</replaceable></filename></option></arg>
-	</cmdsynopsis>
+    <cmdsynopsis>
+        <command>&p;</command>
+        <arg choice='opt'><option><filename><replaceable>event-device</replaceable></filename></option></arg>
+    </cmdsynopsis>
 </refsynopsisdiv>
 <refsection>
-	<title>Description</title>
-	<para>
-		<command>&p;</command> reads key codes from standard input and generates keyboard events,
-		thus simulating key presses.
-	</para>
+    <title>Description</title>
+    <para>
+        <command>&p;</command> reads key codes from standard input and generates keyboard events,
+        thus simulating key presses.
+    </para>
 </refsection>
 
 <refsection>
-	<title>Options</title>
-	<para>
-		<command>&p;</command> accepts the following options:
-	</para>
-	<variablelist>
-		<varlistentry>
-			<term><option><filename><replaceable>event-device</replaceable></filename></option></term>
-			<listitem>
-				<para>A device to send events to. Default is <filename>/dev/input/event0</filename>.</para>
-			</listitem>
-		</varlistentry>
-	</variablelist>
+    <title>Options</title>
+    <para>
+        <command>&p;</command> accepts the following options:
+    </para>
+    <variablelist>
+        <varlistentry>
+            <term><option><filename><replaceable>event-device</replaceable></filename></option></term>
+            <listitem>
+                <para>A device to send events to. Default is <filename>/dev/input/event0</filename>.</para>
+            </listitem>
+        </varlistentry>
+    </variablelist>
 </refsection>
 
 <refsection>
-	<title>Usage example</title>
-	<screen><prompt>#</prompt> <command>printf</command> 'KEY_F\xaKEY_O\xaKEY_O\xaKEY_DOT' | <command>keyemit</command></screen>
+    <title>Usage example</title>
+    <screen><prompt>#</prompt> <command>printf</command> 'KEY_F\xaKEY_O\xaKEY_O\xaKEY_DOT' | <command>keyemit</command></screen>
 </refsection>
 
 <refsection>
-	<title>See also</title>
-	<para>
-		<citerefentry>
-			<refentrytitle>lsinput</refentrytitle>
-			<manvolnum>8</manvolnum>
-		</citerefentry>,
-		<citerefentry>
-			<refentrytitle>keysniff</refentrytitle>
-			<manvolnum>8</manvolnum>
-		</citerefentry>,
-		<citerefentry>
-			<refentrytitle>onk</refentrytitle>
-			<manvolnum>8</manvolnum>
-		</citerefentry>
-	</para>
+    <title>See also</title>
+    <para>
+        <citerefentry>
+            <refentrytitle>lsinput</refentrytitle>
+            <manvolnum>8</manvolnum>
+        </citerefentry>,
+        <citerefentry>
+            <refentrytitle>keysniff</refentrytitle>
+            <manvolnum>8</manvolnum>
+        </citerefentry>,
+        <citerefentry>
+            <refentrytitle>onk</refentrytitle>
+            <manvolnum>8</manvolnum>
+        </citerefentry>
+    </para>
 </refsection>
 
 </refentry>
 
-<!-- vim:set ts=4 sts=4 sw=4 noet: -->
+<!-- vim:set ts=4 sts=4 sw=4 et: -->

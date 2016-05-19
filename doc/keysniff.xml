@@ -1,84 +1,84 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!DOCTYPE refentry PUBLIC '-//OASIS//DTD DocBook XML V4.5//EN' 'http://www.docbook.org/xml/4.5/docbookx.dtd' 
 [
-	<!ENTITY p 'keysniff'>
-	<!ENTITY version '-'>
+    <!ENTITY p 'keysniff'>
+    <!ENTITY version '-'>
 ]>
 
 <refentry>
 
 <refentryinfo>
-	<title>&p; manual</title>
-	<productname>&p;</productname>
-	<xi:include xmlns:xi='http://www.w3.org/2001/XInclude' href='author.xml' xpointer='xpointer(/*/*)'/>
+    <title>&p; manual</title>
+    <productname>&p;</productname>
+    <xi:include xmlns:xi='http://www.w3.org/2001/XInclude' href='author.xml' xpointer='xpointer(/*/*)'/>
 </refentryinfo>
 
 <refmeta>
-	<refentrytitle>&p;</refentrytitle>
-	<manvolnum>8</manvolnum>
-	<refmiscinfo class='version'>&version;</refmiscinfo>
+    <refentrytitle>&p;</refentrytitle>
+    <manvolnum>8</manvolnum>
+    <refmiscinfo class='version'>&version;</refmiscinfo>
 </refmeta>
 
 <refnamediv>
-	<refname>&p;</refname>
-	<refpurpose>a keyboard events sniffer</refpurpose>
+    <refname>&p;</refname>
+    <refpurpose>a keyboard events sniffer</refpurpose>
 </refnamediv>
 
 <refsynopsisdiv>
-	<cmdsynopsis>
-		<command>&p;</command>
-		<arg choice='opt'><option><filename><replaceable>event-device</replaceable></filename></option></arg>
-	</cmdsynopsis>
+    <cmdsynopsis>
+        <command>&p;</command>
+        <arg choice='opt'><option><filename><replaceable>event-device</replaceable></filename></option></arg>
+    </cmdsynopsis>
 </refsynopsisdiv>
 <refsection>
-	<title>Description</title>
-	<para>
-		<command>&p;</command> displays key codes associated with keyboard events.
-	</para>
+    <title>Description</title>
+    <para>
+        <command>&p;</command> displays key codes associated with keyboard events.
+    </para>
 </refsection>
 
 <refsection>
-	<title>Options</title>
-	<para>
-		<command>&p;</command> accepts the following options:
-	</para>
-	<variablelist>
-		<varlistentry>
-			<term><option><filename><replaceable>event-device</replaceable></filename></option></term>
-			<listitem>
-				<para>A device to listen for events. Default is <filename>/dev/input/event0</filename>.</para>
-			</listitem>
-		</varlistentry>
-	</variablelist>
+    <title>Options</title>
+    <para>
+        <command>&p;</command> accepts the following options:
+    </para>
+    <variablelist>
+        <varlistentry>
+            <term><option><filename><replaceable>event-device</replaceable></filename></option></term>
+            <listitem>
+                <para>A device to listen for events. Default is <filename>/dev/input/event0</filename>.</para>
+            </listitem>
+        </varlistentry>
+    </variablelist>
 </refsection>
 
 <refsection>
-	<title>Bugs</title>
-	<para><command>input-events</command> might be a good replacement for <command>keysniff</command>.</para>
+    <title>Bugs</title>
+    <para><command>input-events</command> might be a good replacement for <command>keysniff</command>.</para>
 </refsection>
 
 <refsection>
-	<title>See also</title>
-	<para>
-		<citerefentry>
-			<refentrytitle>input-events</refentrytitle>
-			<manvolnum>8</manvolnum>
-		</citerefentry>,
-		<citerefentry>
-			<refentrytitle>lsinput</refentrytitle>
-			<manvolnum>8</manvolnum>
-		</citerefentry>,
-		<citerefentry>
-			<refentrytitle>keyemit</refentrytitle>
-			<manvolnum>8</manvolnum>
-		</citerefentry>,
-		<citerefentry>
-			<refentrytitle>onk</refentrytitle>
-			<manvolnum>8</manvolnum>
-		</citerefentry>
-	</para>
+    <title>See also</title>
+    <para>
+        <citerefentry>
+            <refentrytitle>input-events</refentrytitle>
+            <manvolnum>8</manvolnum>
+        </citerefentry>,
+        <citerefentry>
+            <refentrytitle>lsinput</refentrytitle>
+            <manvolnum>8</manvolnum>
+        </citerefentry>,
+        <citerefentry>
+            <refentrytitle>keyemit</refentrytitle>
+            <manvolnum>8</manvolnum>
+        </citerefentry>,
+        <citerefentry>
+            <refentrytitle>onk</refentrytitle>
+            <manvolnum>8</manvolnum>
+        </citerefentry>
+    </para>
 </refsection>
 
 </refentry>
 
-<!-- vim:set ts=4 sts=4 sw=4 noet: -->
+<!-- vim:set ts=4 sts=4 sw=4 et: -->
