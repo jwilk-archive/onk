@@ -33,7 +33,7 @@
 <refsection>
 	<title>Description</title>
 	<para>
-		<command>&p;</command> reads key codes from standard input and generates keyboard evenents,
+		<command>&p;</command> reads key codes from standard input and generates keyboard events,
 		thus simulating key presses.
 	</para>
 </refsection>
