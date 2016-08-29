@@ -50,11 +50,11 @@ int main(int argc, char **argv)
     perror(fname);
     return EXIT_FAILURE;
   }
- 
+
   char *str = NULL;
   ssize_t strlen;
   size_t buflen = 0;
-  
+
   while ((strlen = getline(&str, &buflen, stdin)) != -1)
   {
     int key;
@@ -64,11 +64,11 @@ int main(int argc, char **argv)
     {
       keylist_item_t goal = { .name = str };
       keylist_item_t *result =
-        bsearch(&goal, keylist, sizeof keylist / sizeof (keylist_item_t), sizeof (keylist_item_t), compare_keylist_item); 
+        bsearch(&goal, keylist, sizeof keylist / sizeof (keylist_item_t), sizeof (keylist_item_t), compare_keylist_item);
       if (result == NULL)
         continue;
       key = result->value;
-    } 
+    }
     if (key < 0 || key > KEY_MAX)
       continue;
     send_event(file, EV_KEY, key, 1);

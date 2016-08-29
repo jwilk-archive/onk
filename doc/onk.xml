@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<!DOCTYPE refentry PUBLIC '-//OASIS//DTD DocBook XML V4.5//EN' 'http://www.docbook.org/xml/4.5/docbookx.dtd' 
+<!DOCTYPE refentry PUBLIC '-//OASIS//DTD DocBook XML V4.5//EN' 'http://www.docbook.org/xml/4.5/docbookx.dtd'
 [
 	<!ENTITY p 'onk'>
 	<!ENTITY version '-'>
@@ -44,7 +44,7 @@
 	<para>
 		The configuration file is in the following format:
 		<screen><replaceable>event-device</replaceable>
-:<replaceable>option-1</replaceable> 
+:<replaceable>option-1</replaceable>
 :<replaceable>option-2</replaceable>
 <replaceable>…</replaceable>
 <replaceable>key-1</replaceable>&#9;<replaceable>action-1</replaceable>
@@ -52,7 +52,7 @@
 <replaceable>…</replaceable></screen>
 	</para>
 	<para>
-		<replaceable>event-device</replaceable> is a device to listen for events. 
+		<replaceable>event-device</replaceable> is a device to listen for events.
 	</para>
 	<refsect2>
 		<title>Options</title>

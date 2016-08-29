@@ -53,7 +53,7 @@ int main(void)
   tmp = strchr(fname, '\n');
   if (tmp != NULL)
     *tmp = '\0';
-  
+
   bool conf_grab = false;
   bool conf_daemon = false;
   char *triggers[KEY_MAX + 1];
@@ -88,31 +88,31 @@ int main(void)
     *tmp = '\0';
     command = tmp + 1;
     keyname = line;
-    
+
     int key, key2 = -1;
     if (sscanf(keyname, "%d..%d", &key, &key2) < 1)
     {
       keylist_item_t goal = { .name = keyname };
       keylist_item_t *result =
-        bsearch(&goal, keylist, sizeof keylist / sizeof (keylist_item_t), sizeof (keylist_item_t), compare_keylist_item); 
+        bsearch(&goal, keylist, sizeof keylist / sizeof (keylist_item_t), sizeof (keylist_item_t), compare_keylist_item);
       if (result == NULL)
         invalid_config(n);
       assert(result != NULL);
       key = result->value;
-    } 
+    }
     if (key < 0 || key > KEY_MAX || key2 > KEY_MAX)
       invalid_config(n);
     do
       triggers[key++] = command;
     while (key2 > 0 && key <= key2);
   }
-  
+
   struct input_event ev;
   FILE *file = fopen(fname, "r");
-  if (file == NULL) 
-  { 
-    perror(fname); 
-    return EXIT_FAILURE; 
+  if (file == NULL)
+  {
+    perror(fname);
+    return EXIT_FAILURE;
   }
   if (conf_grab && ioctl(fileno(file), EVIOCGRAB, 1) == -1)
     fail();

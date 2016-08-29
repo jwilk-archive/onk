@@ -28,7 +28,7 @@ int main(int argc, char **argv)
     perror(fname);
     return EXIT_FAILURE;
   }
-  
+
   struct input_event ev;
   while (fread(&ev, sizeof(ev), 1, file) > 0)
   {
