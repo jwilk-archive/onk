@@ -28,10 +28,10 @@ doc: doc/keysniff.8 doc/keyemit.8 doc/onk.8
 	| xsltproc $(xsltproc_opts) --path doc/ --xinclude --output $(@) $(docbook_xsl) -
 
 keylist.h: $(input.h)
-	./script/keylist.h.sh < $(<) > $(@)
+	tools/keylist.h.sh < $(<) > $(@)
 
 keytable.h: $(input.h)
-	./script/keytable.h.sh < $(<) > $(@)
+	tools/keytable.h.sh < $(<) > $(@)
 
 $(exefiles): %: %.o
 	$(LINK.c) $(<) -o $(@)
