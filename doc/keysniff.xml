@@ -10,7 +10,10 @@
 <refentryinfo>
     <title>&p; manual</title>
     <productname>&p;</productname>
-    <xi:include xmlns:xi='http://www.w3.org/2001/XInclude' href='author.xml' xpointer='xpointer(/*/*)'/>
+    <author>
+        <firstname>Jakub</firstname> <surname>Wilk</surname>
+        <email>jwilk@jwilk.net</email>
+    </author>
 </refentryinfo>
 
 <refmeta>

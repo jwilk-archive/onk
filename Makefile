@@ -25,7 +25,7 @@ doc: doc/keysniff.8 doc/keyemit.8 doc/onk.8
 
 %.8: %.xml
 	sed -e "s/\(<!ENTITY version '\).*\('>\)/\1$(version)\2/" < $(<) \
-	| xsltproc $(xsltproc_opts) --path doc/ --xinclude --output $(@) $(docbook_xsl) -
+	| xsltproc $(xsltproc_opts) --path doc/ --output $(@) $(docbook_xsl) -
 
 keylist.h: $(input.h)
 	tools/keylist.h.sh < $(<) > $(@)
