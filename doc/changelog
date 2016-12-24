@@ -1,4 +1,4 @@
-onk (0.3.2) UNRELEASED; urgency=low
+onk (0.4) UNRELEASED; urgency=low
 
   * Improve the manual pages, as per man-pages(7) recommendations:
     + Fix typos.
@@ -8,7 +8,7 @@ onk (0.3.2) UNRELEASED; urgency=low
   * Fix compatibility with Linux ≥ 4.4.
   * Fix potential out-of-bounds read in keysniff.
 
- -- Jakub Wilk <jwilk@jwilk.net>  Sat, 24 Dec 2016 19:23:16 +0100
+ -- Jakub Wilk <jwilk@jwilk.net>  Sat, 24 Dec 2016 19:25:12 +0100
 
 onk (0.3.1) unstable; urgency=low
 
