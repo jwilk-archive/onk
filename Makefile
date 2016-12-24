@@ -20,7 +20,8 @@
 
 CC = gcc
 CFLAGS = -g -O2
-CFLAGS += -std=gnu99 -Wall -Wextra -Wno-initializer-overrides
+CFLAGS += -std=gnu99 -Wall -Wextra
+CFLAGS += -Wno-override-init -Wno-initializer-overrides
 
 cfiles = $(wildcard *.c)
 ofiles = $(cfiles:.c=.o)
