@@ -57,7 +57,7 @@
     <para>
         <replaceable>event-device</replaceable> is a device to listen for events.
     </para>
-    <refsect2>
+    <refsection>
         <title>Options</title>
         <para>
             You may use the following options:
@@ -88,7 +88,7 @@
                 </varlistentry>
             </variablelist>
         </para>
-    </refsect2>
+    </refsection>
 </refsection>
 
 <refsection>
