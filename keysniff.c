@@ -43,7 +43,7 @@ int main(int argc, char **argv)
   {
     if (!ev.value || ev.type != EV_KEY || ev.code > KEY_MAX)
       continue;
-    if (keytable[ev.code] != NULL)
+    if (ev.code < KEY_MAX &&ev.code < KEY_MAX &&  keytable[ev.code] != NULL)
       fprintf(stderr, "%s ", keytable[ev.code]);
     fprintf(stderr, "%d\n", ev.code);
   }
