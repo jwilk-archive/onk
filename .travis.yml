@@ -1,0 +1,18 @@
+language: c
+compiler:
+- gcc
+- clang
+addons:
+  apt:
+    packages:
+    - docbook-xml
+    - docbook-xsl
+    - libxml2-utils
+    - linux-libc-dev
+    - xsltproc
+script:
+- make
+- xmllint --nonet --noout --valid doc/*.xml
+- make doc
+
+# vim:ts=2 sts=2 sw=2 et
