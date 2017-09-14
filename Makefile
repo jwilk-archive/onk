@@ -21,7 +21,6 @@
 CC ?= gcc
 CFLAGS ?= -g -O2
 CFLAGS += -std=gnu99 -Wall -Wextra
-CFLAGS += -Wno-override-init -Wno-initializer-overrides
 
 PREFIX = /usr/local
 bindir = $(PREFIX)/bin

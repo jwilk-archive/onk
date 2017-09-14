@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env perl
 
 # Copyright © 2005-2017 Jakub Wilk <jwilk@jwilk.net>
 #
@@ -20,15 +20,32 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-cat <<EOF
+use strict;
+use warnings;
+
+print <<'EOF' ;
 static const char *keytable[] =
 {
 EOF
-perl -n -e '/^#define (KEY|BTN)_/ and s/#define ([A-Z0-9_]+)[ \t]*((0x)?[0-9a-f]+)$/  [\2] = "\1",/ and print'
-cat <<EOF
+
+my %table;
+while (<>) {
+    if (/^#define\s+((?:KEY|BTN)_\w+)\s+((?:0x)?[0-9a-f]+)/) {
+        my $name = $1;
+        my $value = eval $2;
+        $table{$value} //= $name;
+    }
+}
+for my $value (sort { int $a <=> int $b } keys %table) {
+    my $name = $table{$value};
+    printf '  [0x%04X] = "%s",', $value, $name;
+    print "\n";
+}
+
+print <<'EOF' ;
 };
 
 /* vim:set ts=2 sts=2 sw=2 et: */
 EOF
 
-# vim:ft=sh
+# vim:ft=perl ts=4 sts=4 sw=4 et
