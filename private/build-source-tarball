@@ -50,7 +50,7 @@ rm .git*
 rm .travis.yml
 rm private/build-source-tarball
 mv LICENSE doc/
-make doc
+make -C doc
 find . -empty -delete
 cd ..
 tar -czf "$pwd/$name-$version.tar.gz" */

@@ -1,4 +1,4 @@
-# Copyright © 2005-2016 Jakub Wilk <jwilk@jwilk.net>
+# Copyright © 2007-2017 Jakub Wilk <jwilk@jwilk.net>
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the “Software”), to deal
@@ -18,33 +18,21 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-CC = gcc
-CFLAGS = -g -O2
-CFLAGS += -std=gnu99 -Wall -Wextra
-CFLAGS += -Wno-override-init -Wno-initializer-overrides
+xml_files = $(wildcard *.xml)
+man_files = $(xml_files:.xml=.8)
 
-cfiles = $(wildcard *.c)
-ofiles = $(cfiles:.c=.o)
-exefiles = keyemit keysniff onk
-
-input.h = $(or $(wildcard /usr/include/linux/input-event-codes.h) /usr/include/linux/input.h)
+docbook_xsl = http://docbook.sourceforge.net/release/xsl/current/manpages/docbook.xsl
+xsltproc_opts = --nonet --param man.authors.section.enabled 0
 
 .PHONY: all
-all: $(exefiles)
+all: $(man_files)
+	echo $(man_files)
+
+%.8: %.xml
+	xsltproc $(xsltproc_opts) $(docbook_xsl) $(<)
 
 .PHONY: clean
 clean:
-	rm -f $(exefiles) *.o *.h
-
-keylist.h: $(input.h)
-	tools/keylist.h.sh < $(<) > $(@)
-
-keytable.h: $(input.h)
-	tools/keytable.h.sh < $(<) > $(@)
-
-$(exefiles): %: %.o
-	$(LINK.c) $(<) -o $(@)
-
-include Makefile.dep
+	rm -f *.8
 
 # vim:ts=4 sts=4 sw=4 noet
