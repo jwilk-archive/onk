@@ -55,11 +55,8 @@ endif
 clean:
 	rm -f $(exefiles) *.o *.h
 
-keylist.h: $(input.h) tools/make-keylist.h
-	tools/make-keylist.h < $(<) > $(@)
-
-keytable.h: $(input.h) tools/make-keytable.h
-	tools/make-keytable.h < $(<) > $(@)
+%.h: $(input.h) tools/make-%.h
+	tools/make-$(@) < $(<) > $(@)
 
 $(exefiles): %: %.o
 	$(LINK.c) $(^) $(LDLIBS) -o $(@)
