@@ -27,8 +27,6 @@ cfiles = $(wildcard *.c)
 ofiles = $(cfiles:.c=.o)
 exefiles = keyemit keysniff onk
 
-version = $(shell head -n1 doc/changelog | cut -d ' ' -f2 | tr -d '()')
-
 input.h = $(or $(wildcard /usr/include/linux/input-event-codes.h) /usr/include/linux/input.h)
 
 docbook_xsl = http://docbook.sourceforge.net/release/xsl/current/manpages/docbook.xsl
@@ -45,8 +43,7 @@ clean:
 doc: doc/keysniff.8 doc/keyemit.8 doc/onk.8
 
 %.8: %.xml
-	sed -e "s/\(<!ENTITY version '\).*\('>\)/\1$(version)\2/" < $(<) \
-	| xsltproc $(xsltproc_opts) --path doc/ --output $(@) $(docbook_xsl) -
+	xsltproc $(xsltproc_opts) --path doc/ --output $(@) $(docbook_xsl) $(<)
 
 keylist.h: $(input.h)
 	tools/keylist.h.sh < $(<) > $(@)
