@@ -38,7 +38,7 @@
     <title>Description</title>
     <para>
         <command>&p;</command> reads key codes from standard input and generates keyboard events,
-        thus simulating key presses.
+        thereby simulating key presses.
     </para>
 </refsection>
 
@@ -51,7 +51,7 @@
         <varlistentry>
             <term><option><filename><replaceable>event-device</replaceable></filename></option></term>
             <listitem>
-                <para>A device to send events to. Default is <filename>/dev/input/event0</filename>.</para>
+                <para>Device to send events to. The default is <filename>/dev/input/event0</filename>.</para>
             </listitem>
         </varlistentry>
     </variablelist>

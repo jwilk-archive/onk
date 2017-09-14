@@ -50,7 +50,7 @@
         <varlistentry>
             <term><option><filename><replaceable>event-device</replaceable></filename></option></term>
             <listitem>
-                <para>A device to listen for events. Default is <filename>/dev/input/event0</filename>.</para>
+                <para>Device to listen for events. The default is <filename>/dev/input/event0</filename>.</para>
             </listitem>
         </varlistentry>
     </variablelist>

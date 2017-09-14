@@ -61,7 +61,7 @@
     <refsection>
         <title>Options</title>
         <para>
-            You may use the following options:
+            The following options can be used:
             <variablelist>
                 <varlistentry>
                     <term><option>daemon</option></term>
