@@ -32,7 +32,7 @@ version = $(shell head -n1 doc/changelog | cut -d ' ' -f2 | tr -d '()')
 input.h = $(or $(wildcard /usr/include/linux/input-event-codes.h) /usr/include/linux/input.h)
 
 docbook_xsl = http://docbook.sourceforge.net/release/xsl/current/manpages/docbook.xsl
-xsltproc_opts = --param man.authors.section.enabled 0
+xsltproc_opts = --nonet --param man.authors.section.enabled 0
 
 .PHONY: all
 all: $(exefiles)
