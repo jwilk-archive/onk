@@ -30,7 +30,7 @@ EOF
 
 my %table;
 while (<>) {
-    if (/^#define\s+((?:KEY|BTN)_\w+)\s+((?:0x)?[0-9a-f]+)/) {
+    if (/^#define\s+((?:KEY|BTN)_\w+)\s+((?:[0-9]+|0[xX])[0-9a-fA-F]+)\s*$/) {
         my $name = $1;
         my $value = eval $2;
         $table{$value} //= $name;
