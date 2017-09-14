@@ -18,8 +18,8 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-CC = gcc
-CFLAGS = -g -O2
+CC ?= gcc
+CFLAGS ?= -g -O2
 CFLAGS += -std=gnu99 -Wall -Wextra
 CFLAGS += -Wno-override-init -Wno-initializer-overrides
 
