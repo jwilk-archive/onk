@@ -55,10 +55,10 @@ endif
 clean:
 	rm -f $(exefiles) *.o *.h
 
-keylist.h: $(input.h)
+keylist.h: $(input.h) tools/keylist.h.sh
 	tools/keylist.h.sh < $(<) > $(@)
 
-keytable.h: $(input.h)
+keytable.h: $(input.h) tools/keytable.h.sh
 	tools/keytable.h.sh < $(<) > $(@)
 
 $(exefiles): %: %.o
