@@ -43,7 +43,7 @@ keytable.h: $(input.h)
 	tools/keytable.h.sh < $(<) > $(@)
 
 $(exefiles): %: %.o
-	$(LINK.c) $(<) -o $(@)
+	$(LINK.c) $(^) $(LDLIBS) -o $(@)
 
 include Makefile.dep
 
