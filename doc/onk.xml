@@ -93,7 +93,7 @@
 </refsection>
 
 <refsection>
-    <title>Usage example</title>
+    <title>Example</title>
     <screen><prompt>#</prompt> <command>printf</command> '/dev/input/event1\n:nograb\nKEY_A\techo "A has been pressed" > /dev/tty12' | <command>onk</command></screen>
 </refsection>
 

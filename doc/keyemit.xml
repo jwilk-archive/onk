@@ -58,7 +58,7 @@
 </refsection>
 
 <refsection>
-    <title>Usage example</title>
+    <title>Example</title>
     <screen><prompt>#</prompt> <command>printf</command> 'KEY_F\nKEY_O\nKEY_O\nKEY_DOT' | <command>keyemit</command></screen>
 </refsection>
 
