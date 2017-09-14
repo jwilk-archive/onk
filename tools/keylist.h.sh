@@ -26,7 +26,7 @@ typedef struct { char *name; int value; } keylist_item_t;
 static const keylist_item_t keylist[] =
 {
 EOF
-sed -n -E -e '/^#define (KEY|BTN)_/ s/#define ([A-Z0-9_]+)[ \t]*((0x)?[0-9a-f]+)$/ { .name = "\1", .value = \2 },/p' | sort
+perl -n -e '/^#define (KEY|BTN)_/ and s/#define ([A-Z0-9_]+)[ \t]*((0x)?[0-9a-f]+)$/ { .name = "\1", .value = \2 },/ and print' | sort
 cat <<EOF
 };
 

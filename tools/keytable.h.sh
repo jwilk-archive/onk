@@ -24,7 +24,7 @@ cat <<EOF
 static const char *keytable[] =
 {
 EOF
-sed -n -E -e '/^#define (KEY|BTN)_/ s/#define ([A-Z0-9_]+)[ \t]*((0x)?[0-9a-f]+)$/  [\2] = "\1",/p'
+perl -n -e '/^#define (KEY|BTN)_/ and s/#define ([A-Z0-9_]+)[ \t]*((0x)?[0-9a-f]+)$/  [\2] = "\1",/ and print'
 cat <<EOF
 };
 
