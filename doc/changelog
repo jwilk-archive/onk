@@ -1,26 +1,37 @@
 onk (0.4) UNRELEASED; urgency=low
 
-  * Improve the manual pages, as per man-pages(7) recommendations:
+  * Improve the manual pages:
+    + Improve wording.
     + Fix typos.
+    + Use the YYYY-MM-DD date format.
     + Remove the “AUTHOR” and “COPYRIGHT” sections.
+    + Rename “USAGE EXAMPLE” sections as “EXAMPLE”.
     + Make the examples more portable.
+    + Use the YYYY-MM-DD date format in the manual page.
+  * Improve the build system:
+    + Honour CC, CFLAGS and LDLIBS variables from environment.
+    + Disable network access for xsltproc.
+    + Don't use non-portable constructs for sed(1).
+    + Add the “install” target.
+    + Move documentation building code to a separate makefile.
+  * Get rid of duplicates in the key table.
   * Relicense to the Expat license.
   * Fix compatibility with Linux ≥ 4.4.
   * Fix potential out-of-bounds read in keysniff.
 
- -- Jakub Wilk <jwilk@jwilk.net>  Sat, 24 Dec 2016 19:25:12 +0100
+ -- Jakub Wilk <jwilk@jwilk.net>  Tue, 12 Sep 2017 11:08:14 +0200
 
 onk (0.3.1) unstable; urgency=low
 
-  * Provide manual pages.
+  * Add manual pages.
 
  -- Jakub Wilk <jwilk@jwilk.net>  Tue,  6 Mar 2007 19:00:28 +0100
 
 onk (0.3) unstable; urgency=low
 
-  * Support for non-daemon mode (which is now default).
-  * Support for grab mode.
-  * More sensible configuration parsing.
+  * Add support for non-daemon mode (which is now default).
+  * Add support for grab mode.
+  * Parse configuration more sensibly.
 
  -- Jakub Wilk <jwilk@jwilk.net>  Mon,  4 Sep 2006 13:27:54 +0200
 
