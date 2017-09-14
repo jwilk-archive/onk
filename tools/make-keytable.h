@@ -38,14 +38,14 @@ while (<>) {
 }
 for my $value (sort { int $a <=> int $b } keys %table) {
     my $name = $table{$value};
-    printf '  [0x%04X] = "%s",', $value, $name;
+    printf '    [0x%04X] = "%s",', $value, $name;
     print "\n";
 }
 
 print <<'EOF' ;
 };
 
-/* vim:set ts=2 sts=2 sw=2 et: */
+/* vim:set ts=4 sts=4 sw=4 et: */
 EOF
 
 # vim:ft=perl ts=4 sts=4 sw=4 et

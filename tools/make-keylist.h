@@ -26,11 +26,11 @@ typedef struct { char *name; int value; } keylist_item_t;
 static const keylist_item_t keylist[] =
 {
 EOF
-perl -n -e '/^#define (KEY|BTN)_/ and s/#define ([A-Z0-9_]+)[ \t]*((0x)?[0-9a-f]+)$/ { .name = "\1", .value = \2 },/ and print' | sort
+perl -n -e '/^#define (KEY|BTN)_/ and s/#define ([A-Z0-9_]+)[ \t]*((0x)?[0-9a-f]+)$/    { .name = "\1", .value = \2 },/ and print' | sort
 cat <<EOF
 };
 
-/* vim:set ts=2 sts=2 sw=2 et: */
+/* vim:set ts=4 sts=4 sw=4 et: */
 EOF
 
 # vim:ft=sh
