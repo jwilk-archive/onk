@@ -23,6 +23,10 @@ CFLAGS ?= -g -O2
 CFLAGS += -std=gnu99 -Wall -Wextra
 CFLAGS += -Wno-override-init -Wno-initializer-overrides
 
+PREFIX = /usr/local
+bindir = $(PREFIX)/bin
+mandir = $(PREFIX)/share/man
+
 cfiles = $(wildcard *.c)
 ofiles = $(cfiles:.c=.o)
 exefiles = keyemit keysniff onk
@@ -31,6 +35,21 @@ input.h = $(or $(wildcard /usr/include/linux/input-event-codes.h) /usr/include/l
 
 .PHONY: all
 all: $(exefiles)
+
+.PHONY: install
+install: $(exefiles)
+	install -d $(DESTDIR)$(bindir)
+	echo $(exefiles) \
+	| xargs -n1 \
+	| xargs -t -I{} install -m 644 {} $(DESTDIR)$(bindir)
+ifeq "$(wildcard .git doc/*.8)" ".git"
+	# run "$(MAKE) -C doc" to build the manpages
+else
+	install -d $(DESTDIR)$(mandir)/man8
+	echo $(notdir $(wildcard doc/*.8)) \
+	| xargs -n1 \
+	| xargs -t -I{} install -m 644 doc/{} $(DESTDIR)$(mandir)/man8
+endif
 
 .PHONY: clean
 clean:
