@@ -1,5 +1,9 @@
 onk (0.4) UNRELEASED; urgency=low
 
+  * Relicense to the Expat license.
+  * Fix compatibility with Linux ≥ 4.4.
+  * Fix potential out-of-bounds read in keysniff.
+  * Get rid of duplicates in the key table.
   * Improve the manual pages:
     + Improve wording.
     + Fix typos.
@@ -10,16 +14,16 @@ onk (0.4) UNRELEASED; urgency=low
     + Use the YYYY-MM-DD date format in the manual page.
   * Improve the build system:
     + Honour CC, CFLAGS and LDLIBS variables from environment.
+    + Don't use -pedantic.
+    + Use -O2 instead of -Os.
+    + Use -Wextra instead of -W.
     + Disable network access for xsltproc.
     + Don't use non-portable constructs for sed(1).
     + Add the “install” target.
     + Move documentation building code to a separate makefile.
-  * Get rid of duplicates in the key table.
-  * Relicense to the Expat license.
-  * Fix compatibility with Linux ≥ 4.4.
-  * Fix potential out-of-bounds read in keysniff.
+  * Drop Debian packaging.
 
- -- Jakub Wilk <jwilk@jwilk.net>  Tue, 12 Sep 2017 11:08:14 +0200
+ -- Jakub Wilk <jwilk@jwilk.net>  Tue, 26 Sep 2017 18:07:11 +0200
 
 onk (0.3.1) unstable; urgency=low
 
