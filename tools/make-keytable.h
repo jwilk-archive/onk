@@ -32,7 +32,8 @@ my %table;
 while (<>) {
     if (/^#define\s+((?:KEY|BTN)_\w+)\s+((?:[0-9]+|0[xX])[0-9a-fA-F]+)\s*$/) {
         my $name = $1;
-        my $value = eval $2;
+        my $value = $2;
+        $value = ($value =~ /^0/) ? oct $value : int $value;
         $table{$value} //= $name;
     }
 }
