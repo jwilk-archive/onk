@@ -1,4 +1,4 @@
-onk (0.4) UNRELEASED; urgency=low
+onk (0.4) unstable; urgency=low
 
   * Relicense to the Expat license.
   * Fix compatibility with Linux ≥ 4.4.
@@ -23,7 +23,7 @@ onk (0.4) UNRELEASED; urgency=low
     + Move documentation building code to a separate makefile.
   * Drop Debian packaging.
 
- -- Jakub Wilk <jwilk@jwilk.net>  Tue, 26 Sep 2017 18:07:11 +0200
+ -- Jakub Wilk <jwilk@jwilk.net>  Tue, 26 Sep 2017 18:43:28 +0200
 
 onk (0.3.1) unstable; urgency=low
 
