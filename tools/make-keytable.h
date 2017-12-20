@@ -23,6 +23,8 @@
 use strict;
 use warnings;
 
+use v5.10;
+
 print <<'EOF' ;
 static const char *keytable[] =
 {
