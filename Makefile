@@ -41,7 +41,7 @@ install: $(exefiles)
 	echo $(exefiles) \
 	| xargs -n1 \
 	| xargs -t -I{} install -m 644 {} $(DESTDIR)$(bindir)
-ifeq "$(wildcard .git doc/*.8)" ".git"
+ifeq "$(wildcard doc/*.8)" ""
 	# run "$(MAKE) -C doc" to build the manpages
 else
 	install -d $(DESTDIR)$(mandir)/man8
