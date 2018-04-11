@@ -1,4 +1,5 @@
 *.o
+/dist
 /doc/*.8
 /keyemit
 /keylist.h
