@@ -20,7 +20,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-version=${1:?"no version number provided"}
+export version=${1:?"no version number provided"}
 set -e -u -x
 dch -m -v "$version" -u low -c doc/changelog
-perl -pi -e "s/<!ENTITY version \\K'[0-9.]+'/'$version'/" doc/*.xml
+perl -pi -e 's/<!ENTITY version \047\K[\w.]+/$ENV{version}/' doc/*.xml
