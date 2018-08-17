@@ -68,7 +68,7 @@ int main(void)
   bool conf_daemon = false;
   char *triggers[KEY_MAX + 1];
   memset(triggers, 0, sizeof triggers);
-  for (int n = 1; ; n++)
+  for (unsigned int n = 1; ; n++)
   {
     char *line = NULL, *keyname, *command;
     if (getline(&line, &junk, stdin) == -1)
