@@ -33,7 +33,7 @@
 
 #include "keylist.h"
 
-int compare_keylist_item(const void *a, const void *b)
+static int compare_keylist_item(const void *a, const void *b)
 {
   return strcmp(((const keylist_item_t*)a)->name, ((const keylist_item_t*)b)->name);
 }
