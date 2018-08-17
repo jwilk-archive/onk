@@ -31,7 +31,7 @@
 
 static int compare_keylist_item(const void *a, const void *b)
 {
-  return strcmp(((keylist_item_t*)a)->name, ((keylist_item_t*)b)->name);
+  return strcmp(((const keylist_item_t*)a)->name, ((const keylist_item_t*)b)->name);
 }
 
 static inline void send_event(FILE *file, uint16_t type, uint16_t code, int32_t value)

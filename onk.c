@@ -35,7 +35,7 @@
 
 int compare_keylist_item(const void *a, const void *b)
 {
-  return strcmp(((keylist_item_t*)a)->name, ((keylist_item_t*)b)->name);
+  return strcmp(((const keylist_item_t*)a)->name, ((const keylist_item_t*)b)->name);
 }
 
 static void invalid_config(unsigned int n)
